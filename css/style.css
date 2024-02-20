@@ -19,6 +19,24 @@ html{
   overflow-x: hidden;
 }
 
+section{
+  padding:2rem 9%;
+}
+
+.btn{
+  display: inline-block;
+  margin-top: 1rem;
+  border-radius: 5rem;
+  background: #33425B;
+  color:#fff;
+  padding:.9rem 3.5rem;
+  cursor: pointer;
+  font-size: 1.7rem;
+}
+
+.btn:hover{
+
+}
 
 header{
   position: fixed;
@@ -56,6 +74,54 @@ header .icons a:hover{
   color:var(--blue);
 }
 
+header #toggler{
+  display: none;
+}
+
+header .fa-bars{
+  font-size: 3rem;
+  color:#33425B;
+  border-radius: .5rem;
+  padding:.5rem 1.5rem;
+  cursor: pointer;
+  border:.1rem solid rgba(0,0,0,.3);
+  display: none;
+}
+
+.home{
+  display: flex;
+  align-items: center;
+  min-height: 100vh;
+  /* background: url(../images/home-bg.jpg) no-repeat; */
+  background-size: cover;
+  background-position: center;
+}
+
+.home .content{
+  max-width: 50rem;
+}
+
+.home .content h3{
+  font-size: 6rem;
+  color:#33425B;
+}
+
+.home .content span{
+  font-size: 3.5rem;
+  color:var(--blue);
+  padding:1rem 0;
+  line-height: 1.5;
+}
+
+.home .content p{
+  font-size: 1.5rem;
+  color:#999;
+  padding:1rem 0;
+  line-height: 1.5;
+}
+
+
+
 
 footer {
   display: flex;
@@ -67,4 +133,48 @@ footer {
   background-color: #1F0049;
   color: #ffffff;
   font-size: 1.25em;
+}
+
+
+/* media queries */
+@media (max-width:1050px){
+  html{
+    font-size: 55%;
+  }
+  header{
+    padding: 2rem;
+  }
+}
+
+@media (max-width:832px){
+  header .fa-bars{
+    display: block;
+  }
+
+  header .navbar{
+    position:absolute;
+    top:100%; left:0; right:0;
+    background: #eee;
+    border-top: .1rem solid rgba(0,0,0,.1);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+
+  header #toggler:checked ~ .navbar{
+    clip-path:polygon(0 0,100% 0, 100% 100%, 0% 100%);
+  }
+
+  header .navbar a{
+    margin:1.5rem;
+    padding:1.5rem;
+    background:#fff;
+    border:.1rem solid rgba(0,0,0,.1);
+    display: block;
+
+  }
+}
+
+@media (max-width:580px){
+  html{
+    font-size: 50%;
+  }
 }
